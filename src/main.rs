@@ -4,7 +4,7 @@ extern "C" {
     pub fn crc32(crc: c_ulong, buf: *const u8, len: c_uint) -> c_ulong;
 }
 
-fn test_crc32() {
+fn main() {
     let s = "hello";
     unsafe {
         assert_eq!(crc32(0, s.as_ptr(), s.len() as c_uint), 0x3610a686);
